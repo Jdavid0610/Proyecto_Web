@@ -1,0 +1,44 @@
+.body{
+    font-family: 'Lato', sans-serif;
+    margin: 35px;
+    margin-top: 10%;
+    background-color: rgb(255, 255, 255);
+}
+.enviar{
+    margin-top: 10px;
+    font-size: 100%;
+    text-decoration: none;
+    background-color:rgb(54, 47, 47);
+    color:white;
+    cursor: pointer;
+    border-radius: 15px;
+    border: none;
+    outline:none;
+}
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login_img{
+    width: 600px;
+    border-radius: 20px;
+}
+.links{
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    font-size: small;
+    
+}
+.input{
+    width: 250px;
+    border-radius: 8px;
+    border-color:blanchedalmond;
+    outline: none;
+}
+.error{
+    color: red;
+    font-size: 14px;
+}
+
