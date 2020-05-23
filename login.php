@@ -2,7 +2,7 @@
     include('core/core.php');
     $mensaje=" ";
     if($_POST){
-       if(validarUsuario($_POST)){
+       if(validarUsuario($_POST["usuario"],$_POST["contrasena"])){
             echo "<script>window.location='./index.php';</script>";
             exit();
        }else{
@@ -27,10 +27,8 @@
         <div class="contenedor"> 
             <img class="login_img" src="resourses/img.jpg"></img>
             <form class="contenedor" method="post" action="">
-                <label class="label" for="">Usuario</label>
-                <input class="input" name="usuario" type="text">
-                <label class="label" for="">Contraseña</label>
-                <input class="input" name="contrasena" type="password">
+                <input class="input" placeholder="Usuario" name="usuario" type="text">
+                <input class="input" placeholder="Contraseña" name="contrasena" type="password" >
                 <div class="error">
                     <?php echo $mensaje?>
                 </div>

@@ -1,5 +1,5 @@
 <?php
-    include('core/core.php');
+    include_once('core/core.php');
     varificarSesion();
 ?>
 <!DOCTYPE html>

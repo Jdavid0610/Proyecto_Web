@@ -6,7 +6,7 @@
 }
 .enviar{
     margin-top: 10px;
-    font-size: 100%;
+    font-size: 15px;
     text-decoration: none;
     background-color:rgb(54, 47, 47);
     color:white;
@@ -32,10 +32,13 @@
     
 }
 .input{
+    margin-top: 10px;
     width: 250px;
+    height: 20px;
     border-radius: 8px;
     border-color:blanchedalmond;
     outline: none;
+    font-size: 15px;
 }
 .error{
     color: red;
