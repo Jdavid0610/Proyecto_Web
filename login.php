@@ -3,7 +3,7 @@
     $mensaje=" ";
     if($_POST){
        if(validarUsuario($_POST["usuario"],$_POST["contrasena"])){
-            echo "<script>window.location='./index.php';</script>";
+            echo "<script>window.location='./';</script>";
             exit();
        }else{
            $mensaje="Usuario o contraseña no valido";
@@ -26,7 +26,7 @@
     <body class="body">
         <div class="contenedor"> 
             <img class="login_img" src="resourses/img.jpg"></img>
-            <form class="contenedor" method="post" action="">
+            <form class="contenedor" method="post" action="" autocomplete="off">
                 <input class="input" placeholder="Usuario" name="usuario" type="text">
                 <input class="input" placeholder="Contraseña" name="contrasena" type="password" >
                 <div class="error">

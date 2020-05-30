@@ -1,5 +1,33 @@
 <?php
-
+    include('core/core.php');
+    $mensaje=" ";
+    if($_POST){
+        if(validarContrasena($_POST["contrasena"],$_POST["contrasena2"])){
+            if(validarCorreo($_POST["correo"])){
+                $mensaje="El Correo que digito ya tiene una cuenta";
+                if(validarNombreUsuario($_POST["usuario"])){
+                    $mensaje="Nombre de Usuario no disponible";
+                }else{
+                    if(crearUsuario($_POST["usuario"],$_POST["contrasena"],$_POST["correo"],$_POST["nombre"])){
+                        echo "<script>window.location='./';</script>";
+                        exit();
+                    }
+                }
+            }else{
+                if(validarNombreUsuario($_POST["usuario"])){
+                    $mensaje="Nombre de Usuario no disponible";
+                }else{
+                    if(crearUsuario($_POST["usuario"],$_POST["contrasena"],$_POST["correo"],$_POST["nombre"])){
+                        echo "<script>window.location='./';</script>";
+                        exit();
+                    }
+                }
+            }
+        }else{
+            $mensaje="Las contraseñas no coinciden";
+        }
+        
+    }
 
 ?>
 <!DOCTYPE html>
@@ -14,17 +42,14 @@
     <body class="body">
         <div class="contenedor"> 
             <img class="login_img" src="resourses/img.jpg"></img>
-            <form class="contenedor" method="post" action="">
-                <label class="label" for="">Correo</label>
-                <input class="input" type="text">
-                <label class="label" for="">Usuario</label>
-                <input class="input" type="text">
-                <label class="label" for="">Contraseña</label>
-                <input class="input" type="password">
-                <label class="label" for="">Confirmar Contraseña</label>
-                <input class="input" type="password">
+            <form class="contenedor" method="post" action="" autocomplete="off">
+                <input class="input" placeholder="Correo" type="text" name="correo">
+                <input class="input" placeholder="Nombre Completo" type="text"name="nombre">
+                <input class="input" placeholder="Usuario" type="text"name="usuario">
+                <input class="input" placeholder="Contraseña" type="password"name="contrasena">
+                <input class="input" placeholder="Confirmar Contraseña" type="password"name="contrasena2">
                 <div class="error">
-                    
+                    <?php echo $mensaje?>
                 </div>
                 <button class="enviar" type="submit">Registrarse</button>
             </form>
