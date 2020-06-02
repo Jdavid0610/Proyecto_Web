@@ -1,5 +1,5 @@
 <?php
-    include_once('core/core.php');
+    include('core/core.php');
     varificarSesion();
 ?>
 <!DOCTYPE html>
@@ -17,6 +17,7 @@
 <body class="body">
     <header class="header">
         <img src="./resourses/logo.png" id = "H" class="header__img" > 
+        <a class="logout" href="salir.php" >Salir</a>
     </header>
     <div class = "container">
         <div class="buttom">

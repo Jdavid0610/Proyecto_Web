@@ -24,8 +24,8 @@
         <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     </head>
     <body class="body">
-        <div class="contenedor"> 
-            <img class="login_img" src="resourses/img.jpg"></img>
+        <div class="contenedor">
+            <img class="login_img" src="assets\img\img.jpg"></img>
             <form class="contenedor" method="post" action="" autocomplete="off">
                 <input class="input" placeholder="Usuario" name="usuario" type="text">
                 <input class="input" placeholder="Contraseña" name="contrasena" type="password" >

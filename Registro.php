@@ -2,7 +2,9 @@
     include('core/core.php');
     $mensaje=" ";
     if($_POST){
-        if(validarContrasena($_POST["contrasena"],$_POST["contrasena2"])){
+        if($_POST["contrasena"]=="" || $_POST["contrasena2"]=="" || $_POST["correo"]==""||$_POST["nombre"]==""){
+            $mensaje="Porfavor llene todos los campos";
+        }else if(validarContrasena($_POST["contrasena"],$_POST["contrasena2"])){
             if(validarCorreo($_POST["correo"])){
                 $mensaje="El Correo que digito ya tiene una cuenta";
                 if(validarNombreUsuario($_POST["usuario"])){
@@ -41,7 +43,7 @@
     </head>
     <body class="body">
         <div class="contenedor"> 
-            <img class="login_img" src="resourses/img.jpg"></img>
+            <img class="login_img" src="assets\img\img.jpg"></img>
             <form class="contenedor" method="post" action="" autocomplete="off">
                 <input class="input" placeholder="Correo" type="text" name="correo">
                 <input class="input" placeholder="Nombre Completo" type="text"name="nombre">

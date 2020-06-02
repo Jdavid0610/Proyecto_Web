@@ -1,5 +1,6 @@
 <?php
 include('models/db.php');
+
 session_start();
 
 function validarUsuario($usuario,$contrasena){
@@ -13,6 +14,7 @@ function validarUsuario($usuario,$contrasena){
         
         foreach($row as $r){
            if($r->Usuario==$usuario&&$r->Contrasena==$contrasena){
+                
                 $_SESSION['reserva_usr']=$r;
                 return true;
            }else{
@@ -27,8 +29,7 @@ function validarUsuario($usuario,$contrasena){
 function varificarSesion(){
     $aux=false;
     if(!isset($_SESSION['reserva_usr'])){   
-       echo "<script> window.location='./login.php';</script>";
-       exit();
+        echo "<script> window.location='./login.php';</script>";
     }
 }
 
@@ -88,5 +89,4 @@ function crearUsuario($usuario,$contrasena,$correo,$nombre){
         die('Error db(connect)'.$e->getMessage());
     }
 }
-
 ?>

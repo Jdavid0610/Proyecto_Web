@@ -24,7 +24,7 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
-//yovani
+//
 // Get the modal
 var modal1 = document.getElementById("myModal1");
 
@@ -51,7 +51,7 @@ window.onclick = function(event) {
   }
 }
 
-//kathe
+//
     var modal2 = document.getElementById("myModal2");
     var btn2 = document.getElementById("myBtn2");
     var span2 = document.getElementById("close2");
@@ -70,7 +70,7 @@ window.onclick = function(event) {
         }
     }
 
-//fredy
+//
 var modal3 = document.getElementById("myModal3");
 var btn3 = document.getElementById("myBtn3");
 var span3 = document.getElementById("close3");
@@ -89,7 +89,7 @@ window.onclick = function(event) {
     }
 }
 
-//alejandra
+//
 var modal4 = document.getElementById("myModal4");
 var btn4 = document.getElementById("myBtn4");
 var span4 = document.getElementById("close4");
@@ -107,16 +107,5 @@ window.onclick = function(event) {
     modal4.style.display = "none";
     }
 }
-var z=2;
-function BtnSwap() {
-  var b = document.getElementById("H");
-  var a = document.getElementById("estilo");
-  if ( z%2==0) {
-    b.src="./Recursos/logo2.png";
-    a.href="./Paginas/CSS/1034300294_v2.CSS";
-  } else{
-    b.src="./Recursos/logo.png";
-    a.href="./Paginas/CSS/1034300294_v1.CSS";
-  }
-  z++;
-}
+
+
