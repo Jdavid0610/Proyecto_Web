@@ -161,22 +161,20 @@
             <div class="panel">
                 <section class="carrusel">
                     <div class="carrusel__container">
-                        <div class="carrusel__item_p">
-                            <img class="carrusel__item_p-img" src="./resourses/">
+                        <div class="carrusel__item">
+                            <img class="carrusel__item__info-img"src="./resourses/" alt="">
                             <div class="carrusel__item__info">
-                                <p class="carrusel__item__info-title"></p>
+                                <br><br><br><br><br><br><br>
+
+                                <button id="myBtn1_1" class="carrusel__item__info-boton">Mas...</button>
                             </div>
                         </div>
-                        <div class="carrusel__item_p">
-                            <img class="carrusel__item_p-img" src="./resourses/">
+                        <div class="carrusel__item">
+                            <img class="carrusel__item__info-img"src="./resourses/" alt="">
                             <div class="carrusel__item__info">
-                                <p class="carrusel__item__info-title"></p>
-                            </div>
-                        </div>
-                        <div class="carrusel__item_p">
-                            <img class="carrusel__item_p-img" src="./resourses/">
-                            <div class="carrusel__item__info">
-                                <p class="carrusel__item__info-title"></p>
+                                <br><br><br><br><br><br><br>
+                                
+                                <button id="myBtn2_2" class="carrusel__item__info-boton">Mas...</button>
                             </div>
                         </div>
                     </div>

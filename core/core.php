@@ -96,4 +96,13 @@ function crearUsuario($usuario,$contrasena,$correo,$nombre){
         die('Error db(connect)'.$e->getMessage());
     }
 }
+
+function ReservasUsuario($usuario){
+    $manager = new MongoDB\Driver\Manager ('mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false');
+    $filter = ['Usuario' => $usuario];
+    $options = [];
+    $query = new \MongoDB\Driver\Query($filter, $options);
+    $row = $manager->executeQuery('BDReservas.Reservas', $query);
+    
+}
 ?>
