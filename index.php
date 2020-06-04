@@ -16,7 +16,10 @@
 </head>
 <body class="body">
     <header class="header">
-        <img src="./resourses/logo.png" id = "H" class="header__img" > 
+        <div class="header__div">
+            <img src="assets\img\header.png" id = "H" class="header__img" >
+            <p class="header__p">Audio Visuales</p>
+        </div>
         <a class="logout" href="salir.php" >Salir</a>
     </header>
     <div class = "container">

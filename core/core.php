@@ -84,7 +84,14 @@ function crearUsuario($usuario,$contrasena,$correo,$nombre){
             "Contrasena" => $contrasena,
             "Moroso" => false,
             "Correo" => $correo
-        ); 
+        );
+        $bulk = new MongoDB\Driver\BulkWrite;
+        $user_insert=$bulk->insert($doc);
+        $result=$manager->executeBulkWrite('BDReservas.Usuarios',$bulk);
+        $_SESSION['reserva_usr']=$doc;
+        echo "<script>window.location='./';</script>";
+        return true;
+
     }catch(Exception $e){
         die('Error db(connect)'.$e->getMessage());
     }

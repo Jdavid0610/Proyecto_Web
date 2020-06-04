@@ -10,19 +10,13 @@
                 if(validarNombreUsuario($_POST["usuario"])){
                     $mensaje="Nombre de Usuario no disponible";
                 }else{
-                    if(crearUsuario($_POST["usuario"],$_POST["contrasena"],$_POST["correo"],$_POST["nombre"])){
-                        echo "<script>window.location='./';</script>";
-                        exit();
-                    }
+                    crearUsuario($_POST["usuario"],$_POST["contrasena"],$_POST["correo"],$_POST["nombre"]);   
                 }
             }else{
                 if(validarNombreUsuario($_POST["usuario"])){
                     $mensaje="Nombre de Usuario no disponible";
                 }else{
-                    if(crearUsuario($_POST["usuario"],$_POST["contrasena"],$_POST["correo"],$_POST["nombre"])){
-                        echo "<script>window.location='./';</script>";
-                        exit();
-                    }
+                    crearUsuario($_POST["usuario"],$_POST["contrasena"],$_POST["correo"],$_POST["nombre"]);
                 }
             }
         }else{
