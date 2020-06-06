@@ -2,6 +2,7 @@
 include('models/db.php');
 
 session_start();
+$log="";
 
 function validarUsuario($usuario,$contrasena){
     try{
@@ -14,8 +15,8 @@ function validarUsuario($usuario,$contrasena){
         
         foreach($row as $r){
            if($r->Usuario==$usuario&&$r->Contrasena==$contrasena){
-                
-                $_SESSION['reserva_usr']=$r;
+                $log=$usuario;
+                $_SESSION['reserva_usr']=$r->Usuario;
                 return true;
            }else{
                 return false;
@@ -97,12 +98,22 @@ function crearUsuario($usuario,$contrasena,$correo,$nombre){
     }
 }
 
-function ReservasUsuario($usuario){
+function ReservasUsuario(){
+    $log=$_SESSION['reserva_usr'];
     $manager = new MongoDB\Driver\Manager ('mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false');
-    $filter = ['Usuario' => $usuario];
+    $filter = ['Usuario' => $log];
     $options = [];
     $query = new \MongoDB\Driver\Query($filter, $options);
     $row = $manager->executeQuery('BDReservas.Reservas', $query);
-    
+    return $row;
+}
+
+function DatosItems(){
+    $manager = new MongoDB\Driver\Manager ('mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false');
+    $filter = [];
+    $options = [];
+    $query = new \MongoDB\Driver\Query($filter, $options);
+    $row = $manager->executeQuery('BDReservas.Items', $query);
+    return $row;
 }
 ?>
