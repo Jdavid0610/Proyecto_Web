@@ -39,10 +39,10 @@ function CreateCarruselItem2(tipo,marca_Tipo_cable,numero_iteracion){
         Img.src="assets/img/parlante.png";
     }else if(tipo=="Portatil"){
         Img.src="assets/img/portatil.png";
-    }else if(Tipo=="VideoBeem"){
+    }else if(tipo=="VideoBeem"){
         Img.src="assets/img/videobeam.png";
     }else{
-        if(marca_tipo_cable=="UTP"){
+        if(marca_Tipo_cable=="UTP"){
             Img.src="assets/img/cable.png";
         }else{
             Img.src="assets/img/cable_extencion.png";
@@ -87,7 +87,7 @@ function CreateCarruselItem(tipo,marca_Tipo_cable,numero_iteracion){
     }else if(tipo=="VideoBeem"){
         Img.src="assets/img/videobeam.png";
     }else{
-        if(marca_tipo_cable=="UTP"){
+        if(marca_Tipo_cable=="UTP"){
             Img.src="assets/img/cable.png";
         }else{
             Img.src="assets/img/cable_extencion.png";
@@ -102,7 +102,7 @@ function CreateCarruselItem(tipo,marca_Tipo_cable,numero_iteracion){
     carruselContainer.appendChild(containerDiv);
 }
 
-function CreateModalItem(tipo,cod_item,fecha,hora_i,hora_f,Marca_tipoCable,Modelo,numero_iteracion){
+function CreateModalItem(tipo,cod_item,fecha,hora_i,hora_f,marca_Tipo_cable,Modelo,numero_iteracion){
 
     var divReferencia = document.getElementById("divReservasActivas");
     var divModal = document.createElement("div");
@@ -154,7 +154,7 @@ function CreateModalItem(tipo,cod_item,fecha,hora_i,hora_f,Marca_tipoCable,Model
     }else if(tipo=="VideoBeem"){
         img.src="assets/img/videobeam.png";
     }else{
-        if(marca_tipo_cable=="UTP"){
+        if(marca_Tipo_cable=="UTP"){
             img.src="assets/img/cable.png";
         }else{
             img.src="assets/img/cable_extencion.png";
@@ -168,7 +168,7 @@ function CreateModalItem(tipo,cod_item,fecha,hora_i,hora_f,Marca_tipoCable,Model
         p4.textContent="Hora Inicio:";
         p5.textContent="Hora Fin:";
         p6.textContent="";
-        Atrr1.textContent=Marca_tipoCable;
+        Atrr1.textContent=marca_Tipo_cable;
         Atrr2.textContent=cod_item;
         Atrr3.textContent=fecha;
         Atrr4.textContent=hora_i;
@@ -180,7 +180,7 @@ function CreateModalItem(tipo,cod_item,fecha,hora_i,hora_f,Marca_tipoCable,Model
         p4.textContent="Fecha de Reserva:";
         p5.textContent="Hora Inicio:";
         p6.textContent="Hora Fin:";
-        Atrr1.textContent=Marca_tipoCable;
+        Atrr1.textContent=marca_Tipo_cable;
         Atrr2.textContent=Modelo;
         Atrr3.textContent=cod_item;
         Atrr4.textContent=fecha;

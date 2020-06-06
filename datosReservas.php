@@ -5,7 +5,6 @@ $reservas=ReservasUsuario();
 $json = array();
 
 foreach($reservas as $r){
-    //var_dump($r);
     $json[]= array(
         'Usuario'=>$r->Usuario,
         'Codigo_Item'=>$r->Codigo_Item,

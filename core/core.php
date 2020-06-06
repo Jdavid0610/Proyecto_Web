@@ -89,7 +89,7 @@ function crearUsuario($usuario,$contrasena,$correo,$nombre){
         $bulk = new MongoDB\Driver\BulkWrite;
         $user_insert=$bulk->insert($doc);
         $result=$manager->executeBulkWrite('BDReservas.Usuarios',$bulk);
-        $_SESSION['reserva_usr']=$doc;
+        $_SESSION['reserva_usr']=$doc->Usuario;
         echo "<script>window.location='./';</script>";
         return true;
 
@@ -115,5 +115,101 @@ function DatosItems(){
     $query = new \MongoDB\Driver\Query($filter, $options);
     $row = $manager->executeQuery('BDReservas.Items', $query);
     return $row;
+}
+
+function Reservar($data){
+    $log=$_SESSION['reserva_usr'];
+    $manager = new MongoDB\Driver\Manager ('mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false');
+    $filter = [];
+    $options = [];
+    $query = new \MongoDB\Driver\Query($filter, $options);
+    $row = $manager->executeQuery('BDReservas.Reservas', $query);
+    $items = DatosItems();
+    $encontrado=false;
+    if($data->Tipo=="Cable"){
+        foreach($items as $i){
+            if($i->Tipo_Cable==$data->Tipo_Cable){
+                foreach($row as $r){
+                    if($r->Codigo_Item==$i->Codigo){
+                        $encontrado=true;
+                        if($r->Fecha==$data->Fecha&&$r->Hora_Inicio==$data->Hora_Inicio){
+                            return "No se pudo realizar la reserva para ".$data->Fecha." a las ".$data->Hora_Inicio." Hasta ".$data->Hora_Fin;
+                        }else{
+                            $doc = array(
+                                "Usuario" => $log,
+                                "Codigo_Item" => $i->Codigo,
+                                "Fecha" => $data->Fecha,
+                                "Hora_Inicio" => $data->Hora_Inicio,
+                                "Hora_Fin" => $data->Hora_Fin,
+                                "Activa" => true
+                            );
+                            $bulk = new MongoDB\Driver\BulkWrite;
+                            $reserva_insert=$bulk->insert($doc);
+                            $result=$manager->executeBulkWrite('BDReservas.Reservas',$bulk);
+    
+                            return "Reserva satisfactoria para ".$data->Fecha." a las ".$data->Hora_Inicio." Hasta ".$data->Hora_Fin." ";
+                        }
+                    }
+                }
+                if($encontrado==false){
+                    $doc = array(
+                        "Usuario" => $log,
+                        "Codigo_Item" => $i->Codigo,
+                        "Fecha" => $data->Fecha,
+                        "Hora_Inicio" => $data->Hora_Inicio,
+                        "Hora_Fin" => $data->Hora_Fin,
+                        "Activa" => true
+                    );
+                    $bulk = new MongoDB\Driver\BulkWrite;
+                    $reserva_insert=$bulk->insert($doc);
+                    $result=$manager->executeBulkWrite('BDReservas.Reservas',$bulk);
+    
+                    return "Reserva satisfactoria para ".$data->Fecha." a las ".$data->Hora_Inicio." Hasta ".$data->Hora_Fin." ";
+                }
+            }
+        }
+    }else{
+        foreach($items as $i){
+            if($i->Tipo==$data->Tipo){
+                foreach($row as $r){
+                    if($r->Codigo_Item==$i->Codigo){
+                        $encontrado=true;
+                        if($r->Fecha==$data->Fecha&&$r->Hora_Inicio==$data->Hora_Inicio){
+                            return "No se pudo realizar la reserva para ".$data->Fecha." a las ".$data->Hora_Inicio." Hasta ".$data->Hora_Fin;
+                        }else{
+                            $doc = array(
+                                "Usuario" => $log,
+                                "Codigo_Item" => $i->Codigo,
+                                "Fecha" => $data->Fecha,
+                                "Hora_Inicio" => $data->Hora_Inicio,
+                                "Hora_Fin" => $data->Hora_Fin,
+                                "Activa" => true
+                            );
+                            $bulk = new MongoDB\Driver\BulkWrite;
+                            $reserva_insert=$bulk->insert($doc);
+                            $result=$manager->executeBulkWrite('BDReservas.Reservas',$bulk);
+    
+                            return "Reserva satisfactoria para ".$data->Fecha." a las ".$data->Hora_Inicio." Hasta ".$data->Hora_Fin." ";
+                        }
+                    }
+                }
+                if($encontrado==false){
+                    $doc = array(
+                        "Usuario" => $log,
+                        "Codigo_Item" => $i->Codigo,
+                        "Fecha" => $data->Fecha,
+                        "Hora_Inicio" => $data->Hora_Inicio,
+                        "Hora_Fin" => $data->Hora_Fin,
+                        "Activa" => true
+                    );
+                    $bulk = new MongoDB\Driver\BulkWrite;
+                    $reserva_insert=$bulk->insert($doc);
+                    $result=$manager->executeBulkWrite('BDReservas.Reservas',$bulk);
+    
+                    return "Reserva satisfactoria para ".$data->Fecha." a las ".$data->Hora_Inicio." Hasta ".$data->Hora_Fin." ";
+                }
+            }
+        }
+    }
 }
 ?>

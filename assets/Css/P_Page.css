@@ -22,6 +22,15 @@
   color: white;
   width: 150px;
   white-space: nowrap;
+  font-size: 100%;
+    background-color: rgb(62, 91, 255);
+    color:white;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    outline:none;
+    margin-right: 10px;
+    text-decoration: none;
 }
 
 .title{

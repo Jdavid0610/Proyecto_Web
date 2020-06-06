@@ -18,7 +18,7 @@
     <header class="header">
         <div class="header__div">
             <img src="assets\img\header.png" id = "H" class="header__img" >
-            <p class="header__p">Audio Visuales</p>
+            <a href="./" class="header__p">Audio Visuales</a>
         </div>
         <a class="logout" href="salir.php" >Salir</a>
     </header>

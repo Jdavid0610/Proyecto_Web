@@ -14,11 +14,11 @@
     <link id = "estilo" rel="stylesheet" href="./assets/Css/P_Page.CSS">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 </head>
-<body class="body" onload="onLoad()">
+<body class="body" onload="">
     <header class="header">
         <div class="header__div">
             <img src="assets\img\header.png" id = "H" class="header__img" >
-            <p class="header__p">Audio Visuales</p>
+            <a href="./" class="header__p">Audio Visuales</a>
         </div>
         <a class="logout" href="salir.php" >Salir</a>
     </header>
@@ -31,34 +31,34 @@
             <div class="panel">
                 <section class="carrusel">
                     <div id="divHistorial" class="carrusel__container">
-                        <buttom class="carrusel__item">
+                        <buttom class="carrusel__item" onclick="location.href='ReservaExtencion.php'">
                             <br>
                             <img class="carrusel__item__info-img"src="assets\img\cable_extencion.png" alt="">
                             <div class="carrusel__item__info">
                                 <p class="carrusel__item__info-title">Extencion</p>
                             </div>
                         </buttom>    
-                        <buttom class="carrusel__item">
+                        <buttom class="carrusel__item" onclick="location.href='ReservaParlante.php'">
                             <br><br><br>
                             <img class="carrusel__item__info-img"src="assets\img\parlante.png" alt="">
                             <div class="carrusel__item__info">
                                 <p class="carrusel__item__info-title">Parlante</p>
                             </div>
                         </buttom>
-                        <buttom class="carrusel__item">
+                        <buttom class="carrusel__item" onclick="location.href='ReservaPortatil.php'">
                             <br><br>
                             <img class="carrusel__item__info-img"src="assets\img\portatil.png" alt="">
                             <div class="carrusel__item__info">
                                 <p class="carrusel__item__info-title">Portatil</p>
                             </div>
                         </buttom>
-                        <buttom class="carrusel__item">
+                        <buttom class="carrusel__item" onclick="location.href='ReservaVideoBeam.php'">
                             <img class="carrusel__item__info-img"src="assets\img\videobeam.png" alt="">
                             <div class="carrusel__item__info">
                                 <p class="carrusel__item__info-title">Video Beam</p>
                             </div>
                         </buttom>
-                        <buttom class="carrusel__item">
+                        <buttom class="carrusel__item" onclick="location.href='ReservaUTP.php'">
                             <img class="carrusel__item__info-img"src="assets\img\cable.png" alt="">
                             <div class="carrusel__item__info">
                                 <p class="carrusel__item__info-title">Cable UTP</p>
