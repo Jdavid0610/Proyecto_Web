@@ -6,7 +6,6 @@ $items=DatosItems();
 $json = array();
 
 foreach($items as $i){
-    //var_dump($i);
     if($i->Tipo=="Cable"){
         $json[]= array(
             'Tipo'=> $i->Tipo,

@@ -5,6 +5,14 @@ var reservas=[];
 var items=[];
 var xhr = new XMLHttpRequest();
 
+function EntregarReserva(){
+    
+}
+
+function CancelarReserva(){
+    console.log("cancelar");
+}
+
 function insertAfter(e,i){ 
     if(e.nextSibling){ 
         e.parentNode.insertBefore(i,e.nextSibling); 
@@ -23,6 +31,9 @@ function CreateCarruselItem2(tipo,marca_Tipo_cable,numero_iteracion){
     var infoP = document.createElement("p");
     var infoP1 = document.createElement("p");
     var btnInfo = document.createElement("button");
+    var btnCancelar = document.createElement("button");
+    var btnEntregar = document.createElement("button");
+    
 
     containerDiv.className="carrusel__item_r";
     Img.className ="carrusel__item__info-img";
@@ -35,6 +46,18 @@ function CreateCarruselItem2(tipo,marca_Tipo_cable,numero_iteracion){
     btnInfo.setAttribute("onclick","CreatePopUp(this)");
     infoP.textContent=tipo;
     infoP1.textContent=marca_Tipo_cable;
+
+     
+    btnCancelar.className="carrusel__item__info-boton";
+    btnCancelar.textContent="Cancelar";
+    btnCancelar.id="CBnt"+numero_iteracion;
+    btnCancelar.setAttribute("onclick","CancelarReserva()");
+
+    btnEntregar.className="carrusel__item__info-boton";
+    btnEntregar.textContent="Entregar";
+    btnEntregar.setAttribute("onclick","EntregarReserva()");
+    
+
     if(tipo=="Parlante"){
         Img.src="assets/img/parlante.png";
     }else if(tipo=="Portatil"){
@@ -52,6 +75,12 @@ function CreateCarruselItem2(tipo,marca_Tipo_cable,numero_iteracion){
     infoDiv.appendChild(btnInfo);
     infoDiv.appendChild(infoP);
     infoDiv.appendChild(infoP1);
+
+    
+    infoDiv.appendChild(btnEntregar);
+    infoDiv.appendChild(btnCancelar);
+    
+
     containerDiv.appendChild(Img);
     containerDiv.appendChild(infoDiv);
     insertAfter(carruselContainer,containerDiv);
@@ -68,6 +97,8 @@ function CreateCarruselItem(tipo,marca_Tipo_cable,numero_iteracion){
     var infoP = document.createElement("p");
     var infoP1 = document.createElement("p");
     var btnInfo = document.createElement("button");
+
+    
 
     containerDiv.className="carrusel__item";
     Img.className ="carrusel__item__info-img";

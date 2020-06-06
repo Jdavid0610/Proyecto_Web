@@ -71,7 +71,7 @@
     <script src="assets/Js/functions.js"></script>
     <script src="assets/Js/Accordion.js"></script>
     <footer class="footer">
-        <p class="footer_title">Autor: Julian David Ortiz Alviar</p>
+    <p class="footer_title" >Autor: Julian David Ortiz Alviar, Roberto Estrada Nieto, Santiago Gomez Viafara</p>
     </footer>
 </body>
 </html>
